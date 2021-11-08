@@ -53,7 +53,7 @@ try:
     speed = (v_out()[1]*0.5)+0.05
     wait = 0.09 * speed
     if on_off:
-        for logic in halfsteparr[::1]:#stepping through index every 1
+        for logic in halfsteparr[::1]:#stepping through index every 1, using half step logic to ensure smoother motor motion
           if cw_ccw ==1: #setting A1, A2, B1, & B2 to ensure correct rotation direction
             A1,A2,B1,B2 = [4,17,27,22] 
           elif cw_ccw == 0:#same as above but swap A1 & B1, and A2 & B2
