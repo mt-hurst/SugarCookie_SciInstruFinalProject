@@ -50,7 +50,7 @@ try:
   while 1:
     on_off = GPIO.input(25) #checking state of on off switch
     cw_ccw = GPIO.input(24) #checking state of cw ccw switch
-    speed = (v_out()[1]*0.5)+0.05
+    speed = (v_out()[1]*0.6)+0.15 #this is the adjusted speed which has good bounds for low and high speed
     wait = 0.09 * speed
     if on_off:
         for logic in halfsteparr[::1]:#stepping through index every 1, using half step logic to ensure smoother motor motion
