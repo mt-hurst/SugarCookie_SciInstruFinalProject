@@ -69,14 +69,14 @@ def motor_loop(): #stepper motor loop control
       pass
 #led loop PWM logic
 pw1and2 = [range(10,101,2),range(100,9,-2)]
-def led_loop(): #led motor loop control
+def led_loop(): #led motor loop control, simulating twinkling of stars.
     try:
         while 1:
             ONOFF = GPIO.input(25)
             #simulating high and low with code as switch being used
             #led_control = 1
             led_control = GPIO.input(5)
-            wait = ((v_out()[1])*0.06+0.005)
+            wait = ((v_out()[1])*0.06+0.005) #tweaked this on 12/13/21 to get the right difference between slow and fast flashing
             if led_control and ONOFF:
                 ONOFF = GPIO.input(25)
                 for i in range(0,45):
